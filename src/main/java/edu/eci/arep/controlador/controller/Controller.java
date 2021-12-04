@@ -5,22 +5,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.eci.arep.controlador.service.ControladorService;
+import edu.eci.arep.controlador.service.DataService;
 
 @RestController
-@RequestMapping( "/v1/controlador" )
+@RequestMapping( "/v1/data" )
 public class Controller {
 	
-	private ControladorService controladorService;
+	private DataService dataService;
 	
 	@Autowired
-	public Controller( ControladorService controladorService ){
-        this.controladorService = controladorService;
+	public Controller( DataService dataService ){
+        this.dataService = dataService;
     }
 	
 	@PostMapping
-    public void generateDates( ){
-		controladorService.generateDates();
+    public void generateData( ){
+		dataService.generateData();
     }
 
 	
